@@ -1,27 +1,26 @@
-# React + TypeScript + Vite
+# Theme Switch Context Tutorial
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Purpose 🎯
 
-Currently, two official plugins are available:
+The **theme-switch-context-tutorial** is a React application designed to showcase the practical application of the Context hook. Through this project, users can explore how to manage global state using the Context API, with a specific focus on implementing a theme switcher functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features 🚀
 
-## Expanding the ESLint configuration
+- **User Authentication**: Users can log in by entering their first and last names into a simple form.
+- **Dynamic Display**: After logging in, the form is replaced by a personalized greeting displaying the user's full name.
+- **Theme Switcher**: A switch button allows users to toggle between light and dark modes, showcasing the dynamic manipulation of themes through Context.
+- **Context Implementation**: Demonstrates the use of Context hooks to manage and share global state across different components.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## How to Use 📚
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone this repository to your local machine using `git clone`.
+2. Navigate to the project folder and install dependencies with `npm install`.
+3. Start the development server using `npm run dev`.
+4. Visit http://localhost:5173 in your web browser to access the app.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Tech Stack ⚙️
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Vite
+- React
+- Ant Design
+- Context Hooks
