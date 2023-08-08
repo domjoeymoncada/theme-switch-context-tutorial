@@ -1,7 +1,18 @@
-import { Button } from "antd";
+import { useContext, useState } from "react";
+import { Button, Typography } from "antd";
 import InputFieldGroup from "./InputFieldGroup";
+import { CurrentUserContext, ThemeContext } from "../contexts";
 
 const LoginForm = () => {
+  const theme = useContext(ThemeContext);
+  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const isDarkTheme = theme === "dark";
+  const backgroundColor = isDarkTheme ? "#333333" : undefined;
+  const color = isDarkTheme ? "white" : undefined;
+
   return (
     <div
       style={{
@@ -9,10 +20,27 @@ const LoginForm = () => {
         padding: 10,
         borderRadius: 5,
         marginBottom: 8,
+        backgroundColor,
       }}
     >
-      <InputFieldGroup />
-      <Button>Log in</Button>
+      {currentUser ? (
+        <Typography.Text
+          style={{ color }}
+        >{`Logged in as ${currentUser}`}</Typography.Text>
+      ) : (
+        <>
+          <InputFieldGroup
+            handleSetFirstName={setFirstName}
+            handleSetLastName={setLastName}
+          />
+          <Button
+            style={{ backgroundColor }}
+            onClick={() => setCurrentUser(`${firstName} ${lastName}`)}
+          >
+            <Typography.Text style={{ color }}>Log in</Typography.Text>
+          </Button>
+        </>
+      )}
     </div>
   );
 };
