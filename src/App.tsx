@@ -1,9 +1,14 @@
-import { Row, Typography } from "antd";
+import { Row, Col, Checkbox, Typography } from "antd";
+import LoginForm from "./components/LoginForm";
 
 const App = () => {
   return (
-    <Row>
-      <Typography.Title level={1}>Hello world</Typography.Title>
+    <Row align="middle" justify="space-evenly">
+      <Col span={14}>
+        <Typography.Title level={2}>Context Hook Sample</Typography.Title>
+        <LoginForm />
+        <Checkbox>Use dark mode</Checkbox>
+      </Col>
     </Row>
   );
 };
