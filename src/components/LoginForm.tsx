@@ -1,14 +1,20 @@
 import { useContext, useState } from "react";
 import { Button, Typography } from "antd";
 import InputFieldGroup from "./InputFieldGroup";
-import { CurrentUserContext, ThemeContext } from "../contexts";
+import {
+  CurrentUserContext,
+  CurrentUserContextType,
+  ThemeContext,
+} from "../contexts";
 
 const LoginForm = () => {
   const theme = useContext(ThemeContext);
-  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+  const { currentUser, setCurrentUser } = useContext(
+    CurrentUserContext
+  ) as CurrentUserContextType;
 
-  const [firstName, setFirstName] = useState(null);
-  const [lastName, setLastName] = useState(null);
+  const [firstName, setFirstName] = useState<string | null>("");
+  const [lastName, setLastName] = useState<string | null>("");
   const isDarkTheme = theme === "dark";
   const backgroundColor = isDarkTheme ? "#333333" : undefined;
   const color = isDarkTheme ? "white" : undefined;
